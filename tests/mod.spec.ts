@@ -1,5 +1,6 @@
 import 'mocha';
 import {expect} from 'chai';
+// eslint-disable-next-line no-unused-vars
 import {Arithmeticable, ArithmeticableCollection, Complex, Rational} from '../src/mod/mod';
 
 
@@ -8,6 +9,8 @@ describe('ArithmeticableCollection tests', () => {
   const complex1: Complex = new Complex(10, '20i');
   const complex2: Complex = new Complex(10, '20i');
   const complex3: Complex = new Complex(40, '-20i');
+
+  // eslint-disable-next-line max-len
   const complexcollection: ArithmeticableCollection<Complex> = new ArithmeticableCollection<Complex>([complex1, complex2]);
   // eslint-disable-next-line max-len
   it('Debe poderse añadir un arithmeticable a la lista', () => {

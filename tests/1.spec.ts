@@ -1,6 +1,7 @@
 import 'mocha';
 import {expect} from 'chai';
 import {Fighter, Pokemon, DragonBall, FateServant, ArknightOperator} from '../src/ejercicio-1/fighter';
+import {Combat} from '../src/ejercicio-1/combat';
 
 
 describe('Fighter subclasses tests', () => {
@@ -22,5 +23,15 @@ describe('Fighter subclasses tests', () => {
   });
   it('Un personaje de Arknight es un Fighter ', () => {
     expect(hellagur instanceof Fighter).to.be.true;
+  });
+});
+
+describe('Combat sclass tests', () => {
+  const pokemon: Fighter = new Pokemon('Pikachu', 6, 0.4, 'electrico', [55, 40, 90, 35], 'Pi-kaPika');
+  // eslint-disable-next-line max-len
+  const goku: Fighter = new DragonBall('Son Goku', 62, 1.75, 'saiyan', [9560, 2279, 1500, 26270], 'It\'s over!', 'Kamehameha');
+  const combat1: Combat = new Combat(goku, pokemon);
+  it('Debe existir un metodo para iniciar una pelea ', () => {
+    expect(combat1.start()).to.exist;
   });
 });

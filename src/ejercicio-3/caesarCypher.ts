@@ -35,6 +35,37 @@ export class CaesarCypher extends Cypher {
     return encriptedText;
   }
   decypher(text:string): string {
-    return ``;
+    let ampliedkey: string = this.key;
+    let excess: number = 0;
+    while (ampliedkey.length < text.length) {
+      ampliedkey += ampliedkey;
+    }
+    if (ampliedkey.length > text.length) {
+      excess = ampliedkey.length - text.length;
+      ampliedkey = ampliedkey.substring(0, ampliedkey.length-excess);
+    }
+    let index: number = 0;
+    let dummytextchar: string = ``;
+    let dummykeychar: string = ``;
+    let shiftend: number = 0;
+    let shiftstart: number = 0;
+    let shift: number = 0;
+    let decriptedText: string = ``;
+    while (index < text.length) {
+      dummytextchar = text.charAt(index);
+      dummykeychar = ampliedkey.charAt(index);
+      shiftstart = this.alphabet.indexOf(dummytextchar);
+      shiftend = this.alphabet.indexOf(dummykeychar);
+      if (shiftstart == -1) {
+        decriptedText += dummytextchar;
+      } else {
+        if (shiftstart-shiftend-1 < 0) {
+          shift = this.alphabet.length +(shiftstart - shiftend -1);
+        } else shift = shiftstart-shiftend-1;
+        decriptedText += this.alphabet.charAt((shift)% this.alphabet.length);
+      }
+      index++;
+    }
+    return decriptedText;
   }
 }

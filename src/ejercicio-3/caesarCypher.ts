@@ -1,7 +1,7 @@
 import {Cypher} from './cypher';
 
 export class CaesarCypher extends Cypher {
-  constructor(protected alphabet:string, protected key:string) {
+  constructor(alphabet:string, key:string) {
     super(alphabet, key);
   }
   cypher(text:string): string {

@@ -1,25 +1,25 @@
 // eslint-disable-next-line no-unused-vars
 import {Fighter, Pokemon, Stats, statsIndex, DragonBall, ArknightOperator, FateServant} from './fighter';
 /**
- * Clase combate que contiene a dos pokemons que pelearan cuando se invoque start(), contiene
+ * Clase combate que contiene a dos fighters que pelearan cuando se invoque start(), contiene
  * metodos necesarios para llevar a cabo el combate adecuadamente, el combate se informara por pantalla.
  */
 export class Combat {
   /**
    *
-   * @param fighterA Atributo de la clase que debe ser un objecto Pokemon, atacara primero
-   * @param fighterB Atributo de la clase que debe ser un objecto Pokemon
+   * @param fighterA Atributo de la clase que debe ser un objecto Fighter, atacara primero
+   * @param fighterB Atributo de la clase que debe ser un objecto Fighter
    */
   constructor(private fighterA: Fighter, private fighterB: Fighter) {
   }
   /**
-   * Comienza el combate pokemon entre los pokemons que se encuentran en los atributos de la clase,
+   * Comienza el combate entre los Fighters que se encuentran en los atributos de la clase,
    * comienza el primero declarado y se van turnando, entran en efecto el ataque, los hp, la defensa y el tipo.
    * \Todo el combate se muestra por pantalla con barra de vida por texto.
    * @returns Numero que indica quien es el ganador (irrelevante ya que se trata por la salida de pantalla)
    */
   start(): number {
-    // Pokemon : Nombre, Peso, Altura, Tipo, [Ataque, defensa, velocidad, hp]
+    // Stats Basicas : Nombre, Peso, Altura, Tipo, [Ataque, defensa, velocidad, hp]
 
     let fighterIsOut: boolean = false;
     let fighterWinner: number = 0;
@@ -149,19 +149,19 @@ export class Combat {
     return fighterWinner;
   }
   /**
-   * Funcion adaptada de la P3-Ej8 en la que recibe ahora dos pokemons y calcula el daño que hace el primero al tercero dado unas estadisticas
-   * @param fighterA Objecto de la clase Pokemon con caracteristicas propias
-   * @param fighterB Objecto de la clase Pokemon con caracteristicas propias
-   * @returns Daño calculado segun el tipo del pokemon, stats mediante una formula proporcionada
+   * Funcion adaptada de la P3-Ej8 en la que recibe ahora dos Fighters y calcula el daño que hace el primero al tercero dado unas estadisticas
+   * @param fighterA Objecto de la clase Fighter con caracteristicas propias
+   * @param fighterB Objecto de la clase Fighter con caracteristicas propias
+   * @returns Daño calculado segun el tipo del Fighter, stats mediante una formula proporcionada
    */
   dmgCalculator(fighterA:Fighter, fighterB:Fighter): number {
     // eslint-disable-next-line max-len
     return (50*(fighterA.getStats()[statsIndex.ataque]/fighterB.getStats()[statsIndex.defensa])*this.getEffectivity(fighterA, fighterB));
   }
   /**
-   * Funcion utilizada por el calculador de daño entre pokemons para obtener el multiplicador de efectividad segun el tipo de pokemon que ataca al otro
-   * @param fighterA Objecto de la clase Pokemon con caracteristicas propias
-   * @param fighterB Objecto de la clase Pokemon con caracteristicas propias
+   * Funcion utilizada por el calculador de daño entre Fighters para obtener el multiplicador de efectividad segun el tipo de Fighter que ataca al otro
+   * @param fighterA Objecto de la clase Fighter con caracteristicas propias
+   * @param fighterB Objecto de la clase Fighter con caracteristicas propias
    * @returns Numero indice de la eficacia del ataque del fighterA a fighterB
    */
   getEffectivity(fighterA:Fighter, fighterB:Fighter): number {

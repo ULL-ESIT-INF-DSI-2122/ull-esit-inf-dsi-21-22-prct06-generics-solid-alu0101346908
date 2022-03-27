@@ -1,6 +1,16 @@
 {
   "entryPoints": [
-    "./src/mod/mod.ts"
+    "./src/mod/mod.ts",
+    "./src/ejercicio-1/combat.ts",
+    "./src/ejercicio-1/fighter.ts",
+    "./src/ejercicio-1/pokedex.ts",
+    "./src/ejercicio-2/documentary.ts",
+    "./src/ejercicio-2/mediaCollections.ts",
+    "./src/ejercicio-2/serie.ts",
+    "./src/ejercicio-2/streamable.ts",
+    "./src/ejercicio-2/movie.ts",
+    "./src/ejercicio-3/caesarCypher.ts",
+    "./src/ejercicio-3/cypher.ts"
   ],
   "out": "./docs"
 }

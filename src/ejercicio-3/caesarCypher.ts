@@ -1,9 +1,16 @@
 import {Cypher} from './cypher';
-
+/**
+ * Clase que extiende a Cypher y modela el cifrado por el metodo de Cesar, deplazamiento segun un alfabeto y una key
+ */
 export class CaesarCypher extends Cypher {
   constructor(alphabet:string, key:string) {
     super(alphabet, key);
   }
+  /**
+   * Metodo que encripta un mensaje dado un alfabeto y llave cargados en la clase
+   * @param text Mensaje a encriptar
+   * @returns Mensaje encriptado
+   */
   cypher(text:string): string {
     let ampliedkey: string = this.key;
     let excess: number = 0;
@@ -34,6 +41,11 @@ export class CaesarCypher extends Cypher {
     }
     return encriptedText;
   }
+  /**
+   * Metodo que decripta un mensaje dado un alfabeto y llave cargados en la clase
+   * @param text Mensaje encriptado a desencriptar
+   * @returns Mensaje desencriptado
+   */
   decypher(text:string): string {
     let ampliedkey: string = this.key;
     let excess: number = 0;

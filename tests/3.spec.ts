@@ -11,4 +11,7 @@ describe('Cypher subclass tests', () => {
   it('Se debe poder cifrar un mensaje usando el metodo cypher de CaesarCypher', () => {
     expect(cypher1.cypher(`HOLAESTOESUNAPRUEBA`)).to.eql(`KAMWJVFPAXXYBMWXPCW`);
   });
+  it('Se debe poder descifrar un mensaje usando el metodo decypher de CaesarCypher', () => {
+    expect(cypher1.decypher(`KAMWJVFPAXXYBMWXPCW`)).to.eql(`HOLAESTOESUNAPRUEBA`);
+  });
 });

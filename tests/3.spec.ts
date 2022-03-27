@@ -4,8 +4,11 @@ import {Cypher} from '../src/ejercicio-3/cypher';
 import {CaesarCypher} from '../src/ejercicio-3/caesarCypher';
 
 describe('Cypher subclass tests', () => {
-  const cypher1: Cypher = new CaesarCypher();
+  const cypher1: Cypher = new CaesarCypher(`ABCDEFGHIJKLMNÑOPQRSTUVWXYZ`, `CLAVE`);
   it('Un objecto del Cifrado de Cesar tiene que pertenecer a la clase Cypher', () => {
     expect(cypher1 instanceof Cypher).to.be.true;
+  });
+  it('Se debe poder cifrar un mensaje usando el metodo cypher de CaesarCypher', () => {
+    expect(cypher1.cypher(`HOLAESTOESUNAPRUEBA`)).to.eql(`KAMWJVFPAXXYBMWXPCW`);
   });
 });

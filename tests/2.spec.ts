@@ -1,6 +1,6 @@
 import 'mocha';
 import {expect} from 'chai';
-import {Streamable, BasicStreamableCollection} from '../src/ejercicio-2/stremeable';
+import {Streamable, BasicStreamableCollection} from '../src/ejercicio-2/streamable';
 import {MoviesCollection, SeriesCollection, DocumentariesCollection} from '../src/ejercicio-2/mediaCollections';
 import {Movie} from '../src/ejercicio-2/movie';
 import {Serie} from '../src/ejercicio-2/serie';
@@ -8,9 +8,9 @@ import {Documentary} from '../src/ejercicio-2/documentary';
 
 
 describe('Media classes tests', () => {
-  const movie1: Movie = new Movie(`Interstellar`, 2014, 169, [`sci-fi`, `drama`]);
-  const serie1: Serie = new Serie(`Demon Slayer`, 2019, 44, [`action, fantasy, animation`]);
-  const documentary1: Documentary = new Documentary(`Human`, 2015, 188, `Yann Arthus-Bertrand`);
+  const movie1: Movie = new Movie(`Interstellar`, 2014, 169, [`sci-fi`, `drama`], 13);
+  const serie1: Serie = new Serie(`Demon Slayer`, 2019, 44, [`action, fantasy, animation`], 16);
+  const documentary1: Documentary = new Documentary(`Human`, 2015, 188, `Yann Arthus-Bertrand`, 12);
   it('movie debe ser un objecto de Movie', () => {
     expect(movie1 instanceof Movie).to.be.true;
   });
@@ -23,12 +23,12 @@ describe('Media classes tests', () => {
 });
 
 describe('BasicStreamableCollection subclasses tests', () => {
-  const movie1: Movie = new Movie(`Interstellar`, 2014, 169, [`sci-fi`, `drama`]);
-  const serie1: Serie = new Serie(`Demon Slayer`, 2019, 44, [`action, fantasy, animation`]);
-  const documentary1: Documentary = new Documentary(`Human`, 2015, 188, `Yann Arthus-Bertrand`);
-  const moviescollection: BasicStreamableCollection = new MoviesCollection([movie1]);
-  const seriescollection: BasicStreamableCollection = new SeriesCollection([serie1]);
-  const documentariescollection: BasicStreamableCollection = new DocumentariesCollection([documentary1]);
+  const movie1: Movie = new Movie(`Interstellar`, 2014, 169, [`sci-fi`, `drama`], 13);
+  const serie1: Serie = new Serie(`Demon Slayer`, 2019, 44, [`action, fantasy, animation`], 16);
+  const documentary1: Documentary = new Documentary(`Human`, 2015, 188, `Yann Arthus-Bertrand`, 12);
+  const moviescollection: BasicStreamableCollection<Movie> = new MoviesCollection([movie1]);
+  const seriescollection: BasicStreamableCollection<Serie> = new SeriesCollection([serie1]);
+  const documentariescollection: BasicStreamableCollection<Documentary> = new DocumentariesCollection([documentary1]);
   it('MovieCollection es un BasicStreamableCollection', () => {
     expect(moviescollection instanceof BasicStreamableCollection).to.be.true;
   });

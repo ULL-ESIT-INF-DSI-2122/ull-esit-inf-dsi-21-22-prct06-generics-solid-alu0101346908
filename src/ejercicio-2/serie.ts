@@ -1,7 +1,7 @@
 
 
 export class Serie {
-  constructor(private name: string, private date: number, private episodes: number, private genres: string[]) {
+  constructor(private name: string, private date: number, private episodes: number, private genres: string[], private CE: number) {
   }
   getName(): string {
     return this.name;
@@ -9,10 +9,13 @@ export class Serie {
   getDate(): number {
     return this.date;
   }
-  getEpisodes(): number {
+  getEpisodesNumber(): number {
     return this.episodes;
   }
   getGenres(): string[] {
     return this.genres;
+  }
+  getCE(): number {
+    return this.CE;
   }
 }

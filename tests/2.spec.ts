@@ -1,7 +1,7 @@
 import 'mocha';
 import {expect} from 'chai';
-// import {Streamable, BasicStreamableCollection} from '../src/ejercicio-2/stremeable';
-// import {MoviesCollection, SeriesCollection, DocumentariesCollection} from '../src/ejercicio-2/mediaCollections';
+import {Streamable, BasicStreamableCollection} from '../src/ejercicio-2/stremeable';
+import {MoviesCollection, SeriesCollection, DocumentariesCollection} from '../src/ejercicio-2/mediaCollections';
 import {Movie} from '../src/ejercicio-2/movie';
 import {Serie} from '../src/ejercicio-2/serie';
 import {Documentary} from '../src/ejercicio-2/documentary';
@@ -19,5 +19,23 @@ describe('Media classes tests', () => {
   });
   it('documentary deber ser un objeto de Documentary', () => {
     expect(documentary1 instanceof Documentary).to.be.true;
+  });
+});
+
+describe('BasicStreamableCollection subclasses tests', () => {
+  const movie1: Movie = new Movie(`Interstellar`, 2014, 169, [`sci-fi`, `drama`]);
+  const serie1: Serie = new Serie(`Demon Slayer`, 2019, 44, [`action, fantasy, animation`]);
+  const documentary1: Documentary = new Documentary(`Human`, 2015, 188, `Yann Arthus-Bertrand`);
+  const moviescollection: BasicStreamableCollection = new MoviesCollection([movie1]);
+  const seriescollection: BasicStreamableCollection = new SeriesCollection([serie1]);
+  const documentariescollection: BasicStreamableCollection = new DocumentariesCollection([documentary1]);
+  it('MovieCollection es un BasicStreamableCollection', () => {
+    expect(moviescollection instanceof BasicStreamableCollection).to.be.true;
+  });
+  it('SeriesCollection es un BasicStreamableCollection', () => {
+    expect(seriescollection instanceof BasicStreamableCollection).to.be.true;
+  });
+  it('DocumentaryCollection es un BasicStreamableCollection', () => {
+    expect(documentariescollection instanceof BasicStreamableCollection).to.be.true;
   });
 });

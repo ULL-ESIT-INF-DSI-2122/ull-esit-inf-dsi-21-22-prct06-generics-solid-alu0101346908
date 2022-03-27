@@ -36,7 +36,7 @@ describe('Combat class tests', () => {
   const hellagur: Fighter = new ArknightOperator('Helage', 85, 1.93, 'guard', [762, 334, 120, 3825], 'All hands, prepare to charge!', 26);
   const combat1: Combat = new Combat(goku, artoria);
   it('Debe existir un metodo para iniciar una pelea ', () => {
-    expect(combat1.start()).to.exist;
+    expect(combat1).respondTo('start');
   });
 });
 

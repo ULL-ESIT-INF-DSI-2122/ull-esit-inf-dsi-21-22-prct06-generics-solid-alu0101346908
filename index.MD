@@ -1,5 +1,6 @@
 # Práctica 6 - Clases e interfaces genéricas. Principios SOLID (semana del 21 al 27 de marzo)
 
+[![Coverage Status](https://coveralls.io/repos/github/ULL-ESIT-INF-DSI-2122/ull-esit-inf-dsi-21-22-prct06-generics-solid-alu0101346908/badge.svg?branch=master)](https://coveralls.io/github/ULL-ESIT-INF-DSI-2122/ull-esit-inf-dsi-21-22-prct06-generics-solid-alu0101346908?branch=master)
 ## Objetivos
   - Ejercicios
     1. El combate definitivo

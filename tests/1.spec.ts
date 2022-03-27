@@ -2,7 +2,7 @@ import 'mocha';
 import {expect} from 'chai';
 import {Fighter, Pokemon, DragonBall, FateServant, ArknightOperator} from '../src/ejercicio-1/fighter';
 import {Combat} from '../src/ejercicio-1/combat';
-
+import {Pokedex} from '../src/ejercicio-1/pokedex';
 
 describe('Fighter subclasses tests', () => {
   const pokemon: Fighter = new Pokemon('Pikachu', 6, 0.4, 'electrico', [55, 40, 90, 35], 'Pi-kaPika');
@@ -49,6 +49,7 @@ describe('Pokedex class tests', () => {
   const hellagur: Fighter = new ArknightOperator('Helage', 85, 1.93, 'guard', [762, 334, 120, 3825], 'All hands, prepare to charge!', 26);
   const pokedex: Pokedex = new Pokedex([pokemon, goku, artoria, hellagur]);
   it('Se debe poder añadir un Fighter a la pokedex y obtenerlo posteriormente con un id', () => {
-    expect(pokedex.addFighter(jeanneDArc).getFighter(4)).to.deep.equal(jeanneDArc);
+    expect(pokedex.addFighter(jeanneDArc)).to.be.true;
+    expect(pokedex.getFighter(4)).to.deep.equal(jeanneDArc);
   });
 });

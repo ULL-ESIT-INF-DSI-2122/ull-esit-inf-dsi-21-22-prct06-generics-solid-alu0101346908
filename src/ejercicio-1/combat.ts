@@ -31,6 +31,8 @@ export class Combat {
     const fighterBStartHp: number = (this.fighterB.getStats())[statsIndex.hp];
     const fighterAName: string = this.fighterA.getName();
     const fighterBName: string = this.fighterB.getName();
+    const fighterACatchPhrase: string = this.fighterA.getCatchPhrase();
+    const fighterBCatchPhrase: string = this.fighterB.getCatchPhrase();
     let turn: string = 'A';
     let turnNumber: number = 0;
     // eslint-disable-next-line max-len
@@ -57,6 +59,7 @@ export class Combat {
           case 'A':
             dmg = this.dmgCalculator(this.fighterA, this.fighterB);
             console.log(`\n  Turno: ${turnNumber}    #${fighterAName} ataca a ${fighterBName}# \n`);
+            console.log(`    #${fighterAName}: ${fighterACatchPhrase}#    `);
             console.log(`¡${fighterBName} recibe ${Math.round(dmg)} de daño!`);
             this.fighterB.setHp(fighterBCurrentHp-dmg);
             fighterBCurrentHp = ((this.fighterB.getStats())[statsIndex.hp]);
@@ -92,6 +95,7 @@ export class Combat {
           case 'B':
             dmg = this.dmgCalculator(this.fighterB, this.fighterA);
             console.log(`\n  Turno: ${turnNumber}    #${fighterBName} ataca a ${fighterAName}# \n`);
+            console.log(`    #${fighterBName}: ${fighterBCatchPhrase}#    `);
             console.log(`¡${fighterAName} recibe ${Math.round(dmg)} de daño!`);
             this.fighterA.setHp(fighterACurrentHp-dmg);
             turn = 'A';

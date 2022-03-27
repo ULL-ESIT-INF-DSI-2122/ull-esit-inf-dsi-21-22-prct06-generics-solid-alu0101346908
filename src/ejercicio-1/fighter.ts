@@ -1,4 +1,7 @@
-
+// Pokemon https://pokemondb.net/pokedex/all
+// DragonBall https://legends.dbz.space/characters/stats
+// FateServant https://fategrandorder.fandom.com/wiki/Servant_List
+// ArknightOperator https://arknights.fandom.com/wiki/Operator/List
 export enum statsIndex {ataque = 0, defensa, velocidad, hp }
 
 export type Stats = [number, number, number, number];
